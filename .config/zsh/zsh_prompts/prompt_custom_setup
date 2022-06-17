@@ -1,0 +1,14 @@
+prompt_custom_setup () {
+    local newline=$'\n'
+    if [ $SSH_CLIENT ]; then
+        PS1="%B%F{magenta}╭─[%n@%m]-[%f%(?.%F{blue}.%F{red})%?%f%F{magenta}]: %f%b%F{blue}%~%f$newline%B%F{magenta}╰─[ssh]->>%f%b "
+    else
+        PS1="%B%F{magenta}╭─[%n@%m]-[%f%(?.%F{blue}.%F{red})%?%f%F{magenta}]: %f%b%F{blue}%~%f$newline%B%F{magenta}╰─>>%f%b "
+    fi;
+    RPS1='%F{240}%D{%H:%M:%S} (zsh)%f'
+    PS2="%B%F{magenta}>>>> %f%b"
+
+    prompt_opts=( cr percent )
+}
+
+prompt_custom_setup "$@"

@@ -1,0 +1,1 @@
+/home/diego/.config/zsh/.zshenv
