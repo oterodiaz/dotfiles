@@ -6,6 +6,11 @@ if [ -f "$HOME"/.profile ]; then
     emulate sh -c ". \$HOME/.profile"
 fi
 
+if ! [[ -o interactive ]]; then
+    # Shell is non-interactive. Be done now!
+    return
+fi
+
 if [ -f "$HOME"/.less_colors ]; then
     source "$HOME"/.less_colors
 fi

@@ -6,6 +6,11 @@ if [ -f "$HOME"/.profile ]; then
     source "$HOME"/.profile
 fi
 
+if [[ $- != *i* ]] ; then
+    # Shell is non-interactive.  Be done now!
+    return
+fi
+
 if [ -f "$HOME"/.less_colors ]; then
     source "$HOME"/.less_colors
 fi
