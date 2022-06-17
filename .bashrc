@@ -1,9 +1,9 @@
 if [ -f /etc/bashrc ]; then
-    source /etc/bashrc
+    . /etc/bashrc
 fi
 
 if [ -f "$HOME"/.profile ]; then
-    source "$HOME"/.profile
+    . "$HOME"/.profile
 fi
 
 if [[ $- != *i* ]] ; then
@@ -12,7 +12,7 @@ if [[ $- != *i* ]] ; then
 fi
 
 if [ -f "$HOME"/.less_colors ]; then
-    source "$HOME"/.less_colors
+    . "$HOME"/.less_colors
 fi
 
 if command -v fish > /dev/null 2>&1; then
@@ -23,11 +23,11 @@ if command -v fish > /dev/null 2>&1; then
 fi
 
 if [ -f "$HOME"/.aliases ]; then
-    source "$HOME"/.aliases
+    . "$HOME"/.aliases
 fi
 
 rightprompt() {
-    printf "%*s" $COLUMNS "$(date +%H:%M:%S) (bash)"
+    printf "%*s" "$COLUMNS" "$(date +%H:%M:%S) (bash)"
 }
 
 if [ "$SSH_CLIENT" ]; then

@@ -1,5 +1,5 @@
 if [ -f /etc/zshenv ]; then
-    source /etc/zshenv
+    . /etc/zshenv
 fi
 
 if [ -f "$HOME"/.profile ]; then
@@ -12,7 +12,7 @@ if ! [[ -o interactive ]]; then
 fi
 
 if [ -f "$HOME"/.less_colors ]; then
-    source "$HOME"/.less_colors
+    . "$HOME"/.less_colors
 fi
 
 if command -v fish > /dev/null 2>&1; then
@@ -36,7 +36,7 @@ autoload edit-command-line
 compinit
 zle -N edit-command-line
 
-HISTFILE=$ZDOTDIR/.zsh_history
+HISTFILE="$ZDOTDIR"/.zsh_history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 
@@ -44,7 +44,7 @@ autoload -Uz promptinit
 promptinit
 prompt custom
 
-source $ZDOTDIR/keybindings
-source $ZDOTDIR/pluginrc
+. "$ZDOTDIR"/keybindings
+. "$ZDOTDIR"/pluginrc
 
 greeting

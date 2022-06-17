@@ -8,13 +8,13 @@ if ! [ -d "$ZDOTDIR"/plugins ]; then
 fi
 
 if [ -d "$ZDOTDIR"/plugins/zsh-autosuggestions ]; then
-    source "$ZDOTDIR"/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    . "$ZDOTDIR"/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#555'
     ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 fi
 
 if [ -d "$ZDOTDIR"/plugins/zsh-syntax-highlighting ]; then
-    source "$ZDOTDIR"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    . "$ZDOTDIR"/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     local command_fg="#005FD7"
     ZSH_HIGHLIGHT_STYLES[default]="fg=blue"
     ZSH_HIGHLIGHT_STYLES[arg0]="fg=$command_fg"
@@ -29,7 +29,7 @@ if [ -d "$ZDOTDIR"/plugins/zsh-syntax-highlighting ]; then
 fi
 
 if [ -d "$ZDOTDIR"/plugins/zsh-history-substring-search ]; then
-    source "$ZDOTDIR"/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+    . "$ZDOTDIR"/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
     [[ -n "${key[Up]}"            ]] && bindkey -- "${key[Up]}"             history-substring-search-up
     [[ -n "${key[Down]}"          ]] && bindkey -- "${key[Down]}"           history-substring-search-down
 fi
