@@ -11,6 +11,7 @@ alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias gpip="curl ifconfig.me; echo"
 alias dotfiles="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
+alias rs="clear; greeting"
 
 if command -v exa > /dev/null 2>&1; then
     alias ls="exa -l --group-directories-first --icons -s name -t modified --git"
@@ -55,9 +56,4 @@ greeting() {
 	cat "$HOME"/.greeting
         printf '%b' "\033[0m"
     fi
-}
-
-rs() {
-    clear
-    greeting
 }
