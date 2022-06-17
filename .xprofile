@@ -1,0 +1,9 @@
+if echo "$XDG_CURRENT_DESKTOP" | grep -qi -e "xmonad" -e "qtile"; then
+    /usr/bin/xsettingsd &
+fi
+
+if echo "$SHELL" | grep -q "bash"; then
+    . "$HOME"/.bash_profile
+elif echo "$SHELL" | grep -q "zsh"; then
+    . "$HOME"/.zshenv
+fi
