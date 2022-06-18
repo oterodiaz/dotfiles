@@ -11,7 +11,7 @@ alias rs='clear; greeting'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias gpip='curl ifconfig.me; printf "\n"'
-alias dotfiles="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 if command -v exa > /dev/null 2>&1; then
     alias ls='exa -l --group-directories-first --icons -s name -t modified --git'
@@ -28,26 +28,25 @@ if command -v bat > /dev/null 2>&1; then
 fi
 
 if command -v nvim > /dev/null 2>&1; then
-    alias vi=nvim
-    alias vim=nvim
-fi
-
-if [ -d "$HOME/.config/fish" ]; then
-    alias fcd="cd \$HOME/.config/fish"
+    alias vi='nvim'
+    alias vim='nvim'
 fi
 
 if command -v fish > /dev/null 2>&1; then
+    __fish_config_dir="$(fish -c 'echo \"$__fish_config_dir\"')"
+    alias fcd="cd $__fish_config_dir"
+
     if command -v bash > /dev/null 2>&1; then
         alias fbash='USE_FISH_BASH=false bash'
     fi
     
     if command -v zsh > /dev/null 2>&1; then
         alias fzsh='USE_FISH_ZSH=false zsh'
+        if ! [ -n "${ZDOTDIR+x}" ]; then
+            ZDOTDIR="$(zsh -c 'echo \"$ZDOTDIR\"')"
+        fi
+        alias zcd="cd $ZDOTDIR"
     fi
-fi
-
-if [ -d "$HOME/.config/zsh" ]; then
-    alias zcd="cd $HOME/.config/zsh"
 fi
 
 greeting() {
