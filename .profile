@@ -2,7 +2,7 @@
 # no matter the session type, including graphical 
 # sessions.
 
-EDITOR=nvim
+EDITOR='nvim'
 export EDITOR
 
 SCRIPTS="$HOME/.scripts"
@@ -14,7 +14,7 @@ export PATH
 if [ -n "${DISPLAY+x}" ]; then
     if ! printf '%s' "$XDG_CURRENT_DESKTOP" | grep -qi -e 'gnome' -e 'kde'; then
     if command -v qt5ct > /dev/null 2>&1; then
-            QT_QPA_PLATFORMTHEME=qt5ct
+            QT_QPA_PLATFORMTHEME='qt5ct'
             export QT_QPA_PLATFORMTHEME
     fi
 
@@ -23,6 +23,6 @@ if [ -n "${DISPLAY+x}" ]; then
     fi
     fi
 
-    BROWSER=firefox
+    BROWSER='firefox'
     export BROWSER
 fi
