@@ -1,4 +1,4 @@
-ZDOTDIR="$HOME"/.config/zsh
+ZDOTDIR="$HOME/.config/zsh"
 export ZDOTDIR
 
-fpath=("$ZDOTDIR"/zsh_prompts "$fpath")
+fpath=("$ZDOTDIR/zsh_prompts" $fpath)

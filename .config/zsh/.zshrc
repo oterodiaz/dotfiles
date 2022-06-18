@@ -2,8 +2,8 @@ if [ -f /etc/zshenv ]; then
     . /etc/zshenv
 fi
 
-if [ -f "$HOME"/.profile ]; then
-    emulate sh -c ". \$HOME/.profile"
+if [ -f "$HOME/.profile" ]; then
+    emulate sh -c ". $HOME/.profile"
 fi
 
 if ! [[ -o interactive ]]; then
@@ -11,8 +11,8 @@ if ! [[ -o interactive ]]; then
     return
 fi
 
-if [ -f "$HOME"/.less_colors ]; then
-    . "$HOME"/.less_colors
+if [ -f "$HOME/.less_colors" ]; then
+    . "$HOME/.less_colors"
 fi
 
 if command -v fish > /dev/null 2>&1; then
@@ -22,8 +22,8 @@ if command -v fish > /dev/null 2>&1; then
     fi
 fi
 
-if [ -f "$HOME"/.aliases ]; then
-    emulate sh -c ". \$HOME/.aliases"
+if [ -f "$HOME/.aliases" ]; then
+    emulate sh -c ". $HOME/.aliases"
 fi
 
 setopt autocd extendedglob nomatch inc_append_history extended_history hist_ignore_dups hist_ignore_space
@@ -36,7 +36,7 @@ autoload edit-command-line
 compinit
 zle -N edit-command-line
 
-HISTFILE="$ZDOTDIR"/.zsh_history
+HISTFILE="$ZDOTDIR/.zsh_history"
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 
@@ -44,7 +44,7 @@ autoload -Uz promptinit
 promptinit
 prompt custom
 
-. "$ZDOTDIR"/keybindings
-. "$ZDOTDIR"/pluginrc
+. "$ZDOTDIR/keybindings"
+. "$ZDOTDIR/pluginrc"
 
 greeting

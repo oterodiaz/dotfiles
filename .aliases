@@ -2,29 +2,29 @@
 # They should be as generic as possible. Ideally, they should
 # run even in the dash shell.
 
-alias rm="rm -i"
+alias rm='rm -i'
 alias op=xdg-open
-alias oc="xdg-open ."
-alias glip="hostname -I"
-alias ip="ip -color=auto"
-alias rs="clear; greeting"
-alias diff="diff --color=auto"
-alias grep="grep --color=auto"
-alias gpip="curl ifconfig.me; echo"
+alias oc='xdg-open .'
+alias glip='hostname -I'
+alias ip='ip -color=auto'
+alias rs='clear; greeting'
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
 
 if command -v exa > /dev/null 2>&1; then
-    alias ls="exa -l --group-directories-first --icons -s name -t modified --git"
-    alias ll="exa -l --group-directories-first --icons -s name -t modified --git"
-    alias la="exa -la --group-directories-first --icons -s name -t modified --git"
+    alias ls='exa -l --group-directories-first --icons -s name -t modified --git'
+    alias ll='exa -l --group-directories-first --icons -s name -t modified --git'
+    alias la='exa -la --group-directories-first --icons -s name -t modified --git'
 else
-    alias ls="ls --color=auto -l"
-    alias ll="ls --color=auto -l"
-    alias la="ls --color=auto -la"
+    alias ls='ls --color=auto -l'
+    alias ll='ls --color=auto -l'
+    alias la='ls --color=auto -la'
 fi
 
 if command -v bat > /dev/null 2>&1; then
-    alias pcat="bat -pP"
+    alias pcat='bat -pP'
 fi
 
 if command -v nvim > /dev/null 2>&1; then
@@ -32,28 +32,28 @@ if command -v nvim > /dev/null 2>&1; then
     alias vim=nvim
 fi
 
-if [ -d "$HOME"/.config/fish ]; then
+if [ -d "$HOME/.config/fish" ]; then
     alias fcd="cd \$HOME/.config/fish"
 fi
 
 if command -v fish > /dev/null 2>&1; then
     if command -v bash > /dev/null 2>&1; then
-        alias fbash="USE_FISH_BASH=false bash"
+        alias fbash='USE_FISH_BASH=false bash'
     fi
     
     if command -v zsh > /dev/null 2>&1; then
-        alias fzsh="USE_FISH_ZSH=false zsh"
+        alias fzsh='USE_FISH_ZSH=false zsh'
     fi
 fi
 
-if [ "$ZDOTDIR" ]; then
-    alias zcd="cd \$ZDOTDIR"
+if [ -d "$HOME/.config/zsh" ]; then
+    alias zcd="cd $HOME/.config/zsh"
 fi
 
 greeting() {
-    if [ -f "$HOME"/.greeting ]; then
-        printf '%b' "\033[35m\033[1m"
-	cat "$HOME"/.greeting
-        printf '%b' "\033[0m"
+    if [ -f "$HOME/.greeting" ]; then
+        printf '%b' '\033[35m\033[1m'
+        cat "$HOME/.greeting"
+        printf '%b' '\033[0m'
     fi
 }

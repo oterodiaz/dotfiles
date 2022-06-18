@@ -1,1 +1,1 @@
-. "$ZDOTDIR"/.zshrc
+. "$ZDOTDIR/.zshrc"
