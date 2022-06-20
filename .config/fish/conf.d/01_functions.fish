@@ -15,9 +15,9 @@ alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 if command -v exa &> /dev/null
-    alias ls='exa -l --group-directories-first --icons -s name -t modified --git'
-    alias ll='exa -l --group-directories-first --icons -s name -t modified --git'
-    alias la='exa -la --group-directories-first --icons -s name -t modified --git'
+    alias ls='exa -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias ll='exa -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias la='exa -lga --group-directories-first --icons --sort=name --no-time --git'
 else
     alias ls='ls --color=auto -l'
     alias ll='ls --color=auto -l'
