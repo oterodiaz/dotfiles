@@ -8,8 +8,11 @@ export EDITOR
 SCRIPTS="$HOME/.scripts"
 export SCRIPTS
 
-PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":"$PATH"
-export PATH
+if ! [ -f /tmp/path_set ]; then
+    PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":/var/lib/flatpak/exports/bin:"$PATH"
+    export PATH
+    touch /tmp/path_set
+fi
 
 if [ -n "${DISPLAY+x}" ]; then
     if ! printf '%s' "$XDG_CURRENT_DESKTOP" | grep -qi -e 'gnome' -e 'kde'; then
