@@ -2,7 +2,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-if [ -f "$HOME/.profile" ]; then
+if shopt -q login_shell && [ -f "$HOME/.profile" ]; then
     . "$HOME/.profile"
 fi
 

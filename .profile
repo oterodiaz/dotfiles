@@ -8,10 +8,9 @@ export EDITOR
 SCRIPTS="$HOME/.scripts"
 export SCRIPTS
 
-if ! [ -f /tmp/path_set ]; then
+if ! [ -n "${PROFILE_SOURCED+x}" ]; then
     PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":/var/lib/flatpak/exports/bin:"$PATH"
     export PATH
-    touch /tmp/path_set
 fi
 
 if [ -n "${DISPLAY+x}" ]; then
@@ -29,3 +28,5 @@ if [ -n "${DISPLAY+x}" ]; then
     BROWSER='firefox'
     export BROWSER
 fi
+
+export PROFILE_SOURCED=1
