@@ -32,6 +32,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug('ms-jpq/coq_nvim', { branch = 'coq' })
   Plug('ms-jpq/coq.artifacts', { branch = 'artifacts' })
   Plug('ms-jpq/coq.thirdparty', { branch = '3p' })
+  Plug('tanvirtin/monokai.nvim')
 
 vim.call('plug#end')
 
@@ -60,3 +61,9 @@ require('nvim-autopairs').setup()
 vim.g.coq_settings = {
     auto_start = 'shut-up',
 }
+
+require('monokai').setup({
+  palette = {
+    base2 = '#242424',
+  },
+})
