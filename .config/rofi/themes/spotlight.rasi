@@ -58,7 +58,7 @@ textbox-prompt-colon {
     expand:     false;
     str:        ":";
     margin:     0px 0em 0em -0.4em ;
-    text-color: @normal-foreground;
+    text-color: #000000;
 }
 
 entry {
