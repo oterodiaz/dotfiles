@@ -180,6 +180,7 @@ api.nvim_set_keymap('n', '<Leader>wk',  '<C-w>k',                  { noremap = t
 api.nvim_set_keymap('n', '<Leader>wK',  '<C-w>K',                  { noremap = true, silent = true })
 api.nvim_set_keymap('n', '<Leader>wl',  '<C-w>l',                  { noremap = true, silent = true })
 api.nvim_set_keymap('n', '<Leader>wL',  '<C-w>L',                  { noremap = true, silent = true })
+api.nvim_set_keymap('n', '<Leader>v',   '<C-v>',                   { noremap = true, silent = true })
 api.nvim_set_keymap('n', '<A-Left>',    ':vertical resize +3<CR>', { noremap = true, silent = true })
 api.nvim_set_keymap('n', '<A-Right>',   ':vertical resize -3<CR>', { noremap = true, silent = true })
 api.nvim_set_keymap('n', '<A-Up>',      ':resize +3<CR>',          { noremap = true, silent = true })
