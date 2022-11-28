@@ -32,6 +32,11 @@ if command -v nvim > /dev/null 2>&1; then
     alias vim='nvim'
 fi
 
+if ! [ -n "${ZDOTDIR+x}" ]; then
+    ZDOTDIR="$(zsh -c 'echo \"$ZDOTDIR\"')"
+fi
+alias zcd="cd $ZDOTDIR"
+
 if command -v fish > /dev/null 2>&1; then
     __fish_config_dir="$(fish -c 'echo \"$__fish_config_dir\"')"
     alias fcd="cd $__fish_config_dir"
@@ -42,10 +47,6 @@ if command -v fish > /dev/null 2>&1; then
     
     if command -v zsh > /dev/null 2>&1; then
         alias fzsh='USE_FISH_ZSH=false zsh'
-        if ! [ -n "${ZDOTDIR+x}" ]; then
-            ZDOTDIR="$(zsh -c 'echo \"$ZDOTDIR\"')"
-        fi
-        alias zcd="cd $ZDOTDIR"
     fi
 fi
 
