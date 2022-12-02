@@ -35,7 +35,7 @@ function fish_right_prompt
 end
 
 function fish_prompt
-    printf "%s╭─[%s$USER%s@%s$HOSTNAME%s]─["(status_prompt)"]: %s%s\n" "$_prompt_color" "$_user_prompt_color" "$_at_prompt_color" "$_hostname_prompt_color" "$_prompt_color" "$_pwd_prompt_color" (prompt_pwd)
+    printf "%s╭─[%s$USER%s@%s%s%s]─["(status_prompt)"]: %s%s\n" "$_prompt_color" "$_user_prompt_color" "$_at_prompt_color" "$_hostname_prompt_color" (hostname) "$_prompt_color" "$_pwd_prompt_color" (prompt_pwd)
     printf "%s╰"(custom_fish_mode_prompt)(ssh_prompt)">> %s" "$_prompt_color" (set_color normal)
 end
 
