@@ -49,15 +49,14 @@ end
 
 function updateColorscheme()
   exit_code = os.execute('dark_mode.sh')
-  if exit_code == true then
-    vim.o.background = 'dark'
-    vim.g.catppuccin_flavour = "mocha"
+  if exit_code == 0 then
     vim.cmd [[ colorscheme monokai_pro ]]
+    vim.o.background = 'dark'
     require('lualine').setup({ options = { theme = 'auto' } })
   else
-    vim.o.background = 'light'
     vim.g.catppuccin_flavour = "latte"
     vim.cmd [[ colorscheme catppuccin ]]
+    vim.o.background = 'light'
     require('lualine').setup({ options = { theme = 'catppuccin' } })
   end
 end
