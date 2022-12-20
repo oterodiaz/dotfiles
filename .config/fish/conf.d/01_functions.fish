@@ -41,10 +41,9 @@ if not status --is-interactive
 end
 
 alias rm='rm -i'
-alias op=xdg-open
-alias oc='xdg-open .'
-alias glip='hostname -I'
-alias ip='ip -color=auto'
+alias op=open
+alias oc='open .'
+alias glip='ipconfig getifaddr en0'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias rs='clear; fish_greeting'

@@ -3,10 +3,9 @@
 # run even in the dash shell.
 
 alias rm='rm -i'
-alias op=xdg-open
-alias oc='xdg-open .'
-alias glip='hostname -I'
-alias ip='ip -color=auto'
+alias op=open
+alias oc='open .'
+alias glip='ipconfig getifaddr en0'
 alias rs='clear; greeting'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
