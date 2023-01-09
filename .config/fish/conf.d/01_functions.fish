@@ -89,3 +89,7 @@ if not test -f "$__fish_config_dir/fish_plugins"
         fisher install jorgebucaran/autopair.fish
     end
 end
+
+# Mimic other shells' '!!' syntax
+function last_history_item; echo $history[1]; end
+abbr -a !! --position anywhere --function last_history_item
