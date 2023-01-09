@@ -29,7 +29,7 @@
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 (setq doom-font (font-spec :family "SFMono Nerd Font" :size 14)
-      doom-variable-pitch-font (font-spec :family "SF Pro Rounded" :size 13))
+      doom-variable-pitch-font (font-spec :family "SF Pro Rounded" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -101,6 +101,9 @@
 
 ;; Configure fill column
 (setq fill-column 80)
+
+;; Set the font size of org latex previews
+(after! org (plist-put org-format-latex-options :scale 3.0))
 
 ;; Remap evil-ex (:) to ;
 (map! :desc "Remap evil-ex (:) to ;"
