@@ -149,3 +149,28 @@
       :map rustic-mode-map
       :desc "Run 'cargo run' interactively."
       "b R" #'interactive-rustic-cargo-run)
+
+;; Toggle emphasis markers' visibility in org mode
+(defun toggle-org-emphasis-markers ()
+  "Toggle visibility of org mode emphasis markers."
+  (interactive)
+  (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
+  (org-mode-restart)
+  (message "Emphasis markers are now %s"
+           (if org-hide-emphasis-markers "hidden" "visible")))
+
+(map! :after org
+      :localleader
+      :map org-mode-map
+      :desc "Toggle org mode emphasis markers' visibility for the current buffer"
+      "m t" #'toggle-org-emphasis-markers)
+
+;; Hide emphasis markers by default
+;; (setq-default org-hide-emphasis-markers t)
+
+;; Show full link syntax in org mode by default
+(setq-default org-link-descriptive nil)
+
+;; Blurry transparent background in macOS
+;; (set-face-background 'default "mac:windowBackgroundColor")
+;; (set-face-stipple 'default "alpha:20%")
