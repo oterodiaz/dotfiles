@@ -9,7 +9,7 @@ SCRIPTS="$HOME/.scripts"
 export SCRIPTS
 
 if ! [ -n "${PROFILE_SOURCED+x}" ]; then
-    PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":/var/lib/flatpak/exports/bin:"$HOME"/.cargo/bin:"$PATH"
+    PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":/usr/local/opt/python@3.10/libexec/bin:"$HOME"/.cargo/bin:"$PATH"
     export PATH
 fi
 
