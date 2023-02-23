@@ -2,8 +2,8 @@ function colorscheme
     function usage
         printf 'Usage: colorscheme [-h] [-l] [COLORSCHEME]\n\n' 1>&2
         printf 'Options:\n' 1>&2
-        printf -- '-h\tShow this message\n' 1>&2
-        printf -- '-l\tShow all colorscheme names\n' 1>&2
+        printf '-h\tShow this message\n' 1>&2
+        printf '-l\tShow all colorscheme names\n' 1>&2
     end
 
     if not test -d "$__fish_config_dir/colorschemes"
