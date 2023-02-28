@@ -41,7 +41,6 @@ end
 
 function createSocket()
   pid = vim.fn.getpid()
-  opt.shiftwidth = 4
   socket_name = '/tmp/nvim/nvim' .. pid .. '.sock'
   vim.fn.mkdir('/tmp/nvim', 'p')
   vim.fn.serverstart(socket_name)
