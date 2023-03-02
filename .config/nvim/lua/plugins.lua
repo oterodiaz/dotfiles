@@ -49,10 +49,10 @@ require('Comment').setup()
 
 require('lualine').setup({
   options = {
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_z = { 'location', lineCount }
+    lualine_z = { 'location' }
   }
 })
 

@@ -35,10 +35,6 @@ opt.smartindent = true
 opt.splitbelow = true
 opt.splitright = true
 
-function lineCount()
-  return api.nvim_buf_line_count(0) .. 'L'
-end
-
 function createSocket()
   pid = vim.fn.getpid()
   socket_name = '/tmp/nvim/nvim' .. pid .. '.sock'
