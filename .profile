@@ -8,6 +8,8 @@ export EDITOR
 SCRIPTS="$HOME/.scripts"
 export SCRIPTS
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 if ! [ -n "${PROFILE_SOURCED+x}" ]; then
     PATH="$SCRIPTS":"$HOME/.local/bin":"$HOME/.emacs.d/bin":/usr/local/opt/python@3.11/libexec/bin:"$HOME"/.cargo/bin:"$PATH"
     export PATH

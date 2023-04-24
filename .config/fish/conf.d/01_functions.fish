@@ -41,7 +41,6 @@ if not status --is-interactive
 end
 
 alias rm='rm -i'
-alias op=open
 alias oc='open .'
 alias glip='ipconfig getifaddr en0'
 alias diff='diff --color=auto'
