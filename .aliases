@@ -3,8 +3,6 @@
 # run even in the dash shell.
 
 alias rm='rm -i'
-alias op=open
-alias oc='open .'
 alias glip='ipconfig getifaddr en0'
 alias rs='clear; greeting'
 alias diff='diff --color=auto'
