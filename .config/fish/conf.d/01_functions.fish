@@ -49,10 +49,10 @@ alias fcd="cd \$__fish_config_dir"
 alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-if command -v exa &> /dev/null
-    alias ls='exa -lg --group-directories-first --icons --sort=name --no-time --git'
-    alias ll='exa -lg --group-directories-first --icons --sort=name --no-time --git'
-    alias la='exa -lga --group-directories-first --icons --sort=name --no-time --git'
+if command -v eza &> /dev/null
+    alias ls='eza -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias ll='eza -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias la='eza -lga --group-directories-first --icons --sort=name --no-time --git'
 else
     alias ls='ls --color=auto -l'
     alias ll='ls --color=auto -l'

@@ -10,10 +10,10 @@ alias grep='grep --color=auto'
 alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-if command -v exa > /dev/null 2>&1; then
-    alias ls='exa -lg --group-directories-first --icons --sort=name --no-time --git'
-    alias ll='exa -lg --group-directories-first --icons --sort=name --no-time --git'
-    alias la='exa -lga --group-directories-first --icons --sort=name --no-time --git'
+if command -v eza > /dev/null 2>&1; then
+    alias ls='eza -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias ll='eza -lg --group-directories-first --icons --sort=name --no-time --git'
+    alias la='eza -lga --group-directories-first --icons --sort=name --no-time --git'
 else
     alias ls='ls --color=auto -l'
     alias ll='ls --color=auto -l'
