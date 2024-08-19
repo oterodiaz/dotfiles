@@ -15,7 +15,12 @@ export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 if ! [ -n "${PROFILE_SOURCED+x}" ]; then
-    PATH="$SCRIPTS":"$HOME/.local/bin":/opt/homebrew/bin:/opt/homebrew/opt/python@3.12/libexec/bin:"$PATH"
+    if [ "$(uname -s)" = "Darwin" ]; then
+        PATH="$SCRIPTS":"$HOME/.local/bin":/opt/homebrew/bin:/opt/homebrew/opt/python@3.12/libexec/bin:"$PATH"
+    else
+        PATH="$SCRIPTS":"$HOME/.local/bin":/var/lib/flatpak/exports/bin:"$PATH"
+    fi
+
     export PATH
 fi
 
