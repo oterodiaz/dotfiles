@@ -44,7 +44,7 @@ end
 
 function updateColorscheme()
   exit_code = os.execute('dark_mode.sh')
-  if exit_code == 0 then
+  if exit_code == true or exit_code == 0 then
     vim.g.catppuccin_flavour = "mocha"
     vim.cmd [[ colorscheme catppuccin ]]
     vim.o.background = 'dark'

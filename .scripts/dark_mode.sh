@@ -54,28 +54,48 @@ if [ "$#" -ne 0 ]; then
 fi
 
 get_status() {
-    defaults read -g AppleInterfaceStyle > /dev/null 2>&1
+    if [ "$(uname -s)" = "Darwin" ]; then
+        defaults read -g AppleInterfaceStyle > /dev/null 2>&1
+    else
+        gsettings get org.gnome.desktop.interface color-scheme | grep -qo "prefer-dark"
+    fi
 }
 
 update_theme() {
     if command -v nvim > /dev/null 2>&1; then
         "$SCRIPTS/update_neovim_theme.py" &
     fi
+
     if [ -f "$HOME/.config/bat/config" ]; then
-        gsed -i "s/--theme .*/--theme '$BAT_THEME'/" "$HOME/.config/bat/config" &
+        if [ "$(uname -s)" = "Darwin" ]; then
+            gsed -i "s/--theme .*/--theme '$BAT_THEME'/" "$HOME/.config/bat/config" &
+        else
+            sed -i "s/--theme .*/--theme '$BAT_THEME'/" "$HOME/.config/bat/config" &
+        fi
     fi
+
     if command -v fish > /dev/null 2>&1; then
         fish -c "colorscheme '$FISH_THEME'" &
     fi
+
     # if pgrep 'Emacs' > /dev/null 2>&1; then
     #     emacsclient --no-wait --eval "(load-theme (get-correct-theme))"
     # fi
 } > /dev/null 2>&1
 
 set_theme() {
-    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to '"$DARK_MODE"''
+    if [ "$(uname -s)" = "Darwin" ]; then
+        osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to '"$DARK_MODE"''
+    else
+        if [ "$DARK_MODE" = 'true' ]; then
+            gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+        else
+            gsettings set org.gnome.desktop.interface color-scheme "default"
+        fi
+    fi
+
     update_theme
-} > /dev/null 2>&1
+}
 
 light_config() {
     DARK_MODE='false'
