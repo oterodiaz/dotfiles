@@ -41,13 +41,19 @@ if not status --is-interactive
 end
 
 alias rm='rm -i'
-alias glip='ipconfig getifaddr en0'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias rs='clear; fish_greeting'
 alias fcd="cd \$__fish_config_dir"
 alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+if test (uname -s) = 'Darwin'
+    alias glip='ipconfig getifaddr en0'
+else
+    alias glip='hostname -I'
+    alias ip='ip -color=auto'
+end
 
 if command -v eza &> /dev/null
     alias ls='eza -lg --group-directories-first --icons --sort=name --no-time --git'

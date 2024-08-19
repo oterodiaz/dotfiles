@@ -3,12 +3,18 @@
 # run even in the dash shell.
 
 alias rm='rm -i'
-alias glip='ipconfig getifaddr en0'
 alias rs='clear; greeting'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias gpip='curl ifconfig.me; printf "\n"'
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+if [ "$(uname -s)" = "Darwin" ]; then
+    alias glip='ipconfig getifaddr en0'
+else
+    alias glip='hostname -I'
+    alias ip='ip -color=auto'
+fi
 
 if command -v eza > /dev/null 2>&1; then
     alias ls='eza -lg --group-directories-first --icons --sort=name --no-time --git'
