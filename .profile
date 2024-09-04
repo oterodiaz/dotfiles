@@ -24,4 +24,6 @@ if ! [ -n "${PROFILE_SOURCED+x}" ]; then
     export PATH
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export PROFILE_SOURCED=1
