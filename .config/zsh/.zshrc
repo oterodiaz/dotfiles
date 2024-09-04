@@ -11,6 +11,11 @@ if ! [[ -o interactive ]]; then
     return
 fi
 
+if [ -n "${INTELLIJ_ENVIRONMENT_READER+x}" ]; then
+    # Shell started by IntelliJ Idea or Android Studio, we can't run fish
+    return
+fi
+
 if [ -f "$HOME/.less_colors" ]; then
     . "$HOME/.less_colors"
 fi
