@@ -50,14 +50,15 @@ if command -v fish > /dev/null 2>&1; then
     if command -v bash > /dev/null 2>&1; then
         alias fbash='USE_FISH_BASH=false bash'
     fi
-    
+
     if command -v zsh > /dev/null 2>&1; then
         alias fzsh='USE_FISH_ZSH=false zsh'
     fi
 fi
 
 greeting() {
-    if [ -f "$HOME/.greeting" ]; then
+    # Skip greeting when we're in an IDE integrated terminal or if there's no greeting file
+    if [ ! -n "${IDE_SESSION+x}" ] && [ -f "$HOME/.greeting" ]; then
         printf '%b' '\033[35m\033[1m'
         cat "$HOME/.greeting"
         printf '%b' '\033[0m'

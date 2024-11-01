@@ -22,7 +22,8 @@ set _ssh_prompt_color              (set_color -o "$_accent_color")
 set _greeting_color                (set_color -o "$_main_color")
 
 function fish_greeting
-    if test -f "$HOME/.greeting"
+    # Skip greeting when we're in an IDE integrated terminal or if there's no greeting file
+    if ! set -q IDE_SESSION; and test -f "$HOME/.greeting"
         printf "$_greeting_color"
         cat "$HOME/.greeting"
         set_color normal
