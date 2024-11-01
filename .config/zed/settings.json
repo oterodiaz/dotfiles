@@ -10,17 +10,6 @@
   "project_panel": {
     "dock": "left"
   },
-  "ssh_connections": [
-    {
-      "host": "lirm",
-      "username": "diego",
-      "projects": [
-        {
-          "paths": []
-        }
-      ]
-    }
-  ],
   "telemetry": {
     "diagnostics": false,
     "metrics": false
