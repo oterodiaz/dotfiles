@@ -27,7 +27,9 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
-      ";": "command_palette::Toggle"
+      ";": "command_palette::Toggle",
+      "space t w": "editor::ToggleSoftWrap",
+      "space t n": "editor::ToggleRelativeLineNumbers"
     }
   },
   {
