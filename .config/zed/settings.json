@@ -10,6 +10,17 @@
   "project_panel": {
     "dock": "left"
   },
+  "ssh_connections": [
+    {
+      "host": "lirm",
+      "username": "diego",
+      "projects": [
+        {
+          "paths": []
+        }
+      ]
+    }
+  ],
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -21,8 +32,8 @@
   "base_keymap": "VSCode",
   "ui_font_family": ".SystemUIFont",
   "buffer_font_family": "Liga SFMono Nerd Font",
-  "ui_font_size": 14,
-  "buffer_font_size": 12,
+  "ui_font_size": 16,
+  "buffer_font_size": 13,
   "ensure_final_newline_on_save": true,
   "remove_trailing_whitespace_on_save": true,
   "format_on_save": "on",
