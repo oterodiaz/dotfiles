@@ -1,0 +1,84 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "ssh_connections": [
+    {
+      "host": "lirm",
+      "username": "diego",
+      "projects": [
+        {
+          "paths": []
+        }
+      ]
+    }
+  ],
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank"
+  },
+  "base_keymap": "VSCode",
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_family": "Liga SFMono Nerd Font",
+  "ui_font_size": 14,
+  "buffer_font_size": 12,
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "format_on_save": "on",
+  "confirm_quit": true,
+  "wrap_guides": [100],
+  "redact_private_values": true,
+  "vertical_scroll_margin": 5,
+  "use_system_path_prompts": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 750
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "terminal": {
+    "line_height": "standard",
+    "blinking": "on",
+    "env": {
+      "IDE_SESSION": "true"
+    }
+  },
+  "calls": {
+    "mute_on_join": true,
+    "share_on_join": false
+  },
+  "inlay_hints": {
+    "enabled": false,
+    "show_background": true
+  },
+  "tabs": {
+    "git_status": true,
+    "close_position": "left",
+    "file_icons": true,
+    "activate_on_close": "history"
+  },
+  "languages": {
+    "Lua": {
+      "tab_size": 2
+    },
+    "YAML": {
+      "tab_size": 2
+    }
+  }
+}
