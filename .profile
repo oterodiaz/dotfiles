@@ -10,10 +10,6 @@ export SCRIPTS
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 if ! [ -n "${PROFILE_SOURCED+x}" ]; then
     if [ "$(uname -s)" = "Darwin" ]; then
         PATH="$SCRIPTS":"$HOME/.local/bin":/opt/homebrew/bin:/opt/homebrew/opt/python@3.12/libexec/bin:"$PATH"
@@ -23,6 +19,10 @@ if ! [ -n "${PROFILE_SOURCED+x}" ]; then
 
     export PATH
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
