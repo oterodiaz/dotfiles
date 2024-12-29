@@ -1,0 +1,10 @@
+font-family = "Liga SFMono Nerd Font"
+font-size = 14
+font-synthetic-style = false
+adjust-cell-width = -10%
+font-thicken = true
+
+# Enable ligatures
+font-feature = calt
+font-feature = liga
+font-feature = dlig
