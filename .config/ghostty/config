@@ -1,4 +1,4 @@
-auto-update-channel = tip
+auto-update-channel = stable
 mouse-hide-while-typing = true
 wait-after-command = false
 window-inherit-working-directory = true
@@ -7,6 +7,7 @@ shell-integration-features = no-cursor
 clipboard-trim-trailing-spaces = true
 clipboard-paste-protection = true
 quick-terminal-position = bottom
+term = xterm-256color
 
 # Appearance
 theme = light:Tomorrow,dark:custom-dark
@@ -22,4 +23,3 @@ config-file = fonts
 config-file = keybinds
 config-file = ?macos
 config-file = ?linux
-

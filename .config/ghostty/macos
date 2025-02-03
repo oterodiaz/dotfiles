@@ -1,6 +1,5 @@
 macos-option-as-alt = left
 macos-icon = custom-style
-macos-icon-frame = aluminum
+macos-icon-frame = plastic
 macos-icon-ghost-color = ae81ff
 macos-icon-screen-color = 000000
-
