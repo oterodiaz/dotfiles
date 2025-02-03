@@ -59,6 +59,7 @@ if command -v eza &> /dev/null
     alias ls='eza -lg --group-directories-first --icons --sort=name --no-time --git'
     alias ll='eza -lg --group-directories-first --icons --sort=name --no-time --git'
     alias la='eza -lga --group-directories-first --icons --sort=name --no-time --git'
+    alias tree='eza -lga --group-directories-first --icons --sort=name --no-time --git -T'
 else
     alias ls='ls --color=auto -l'
     alias ll='ls --color=auto -l'
