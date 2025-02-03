@@ -11,6 +11,13 @@ if ! [[ -o interactive ]]; then
     return
 fi
 
+# Prevent stop here if there is no terminal attached to the session
+# This is required by i.e. Zed to get the environment
+if ! ([[ -t 0 ]] && [[ -t 1 ]] && [[ -t 2 ]]); then
+    # Shell is not in a terminal. Be done now!
+    return
+fi
+
 if [ -n "${INTELLIJ_ENVIRONMENT_READER+x}" ]; then
     # Shell started by IntelliJ Idea or Android Studio, we can't run fish
     return
