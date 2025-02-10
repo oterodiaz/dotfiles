@@ -7,7 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Zed (Default)",
   "assistant": {
+    "enable_experimental_live_diffs": true,
+    "dock": "left",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
@@ -15,7 +18,7 @@
     "version": "2"
   },
   "project_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "ssh_connections": [
     {
@@ -57,7 +60,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "dark": "Modest Dark (Custom)"
   },
   "terminal": {
     "line_height": "standard",
