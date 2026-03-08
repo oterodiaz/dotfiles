@@ -1,0 +1,7 @@
+if [[ -z "$NO_FISH" ]] && command -v fish > /dev/null 2>&1; then
+    exec fish
+fi
+
+if [ -f /etc/zshrc ]; then
+    . /etc/zshrc
+fi

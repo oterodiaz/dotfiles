@@ -1,0 +1,16 @@
+{{- $work := false -}}{{/* true if this is a work machine */}}
+
+{{- if contains "MAC-" .chezmoi.hostname -}}
+{{-   $work = true -}}
+{{- end -}}
+
+{{- if not $work -}}
+encryption = "age"
+[age]
+  identity = "~/.age/key.txt"
+  recipient = "age14j38a2dac5wctw50hczh73qecmx2n5alx8y5d5urm2kskdpq7clq9ac8tq"
+
+{{ end -}}
+
+[data]
+  work = {{ $work }}

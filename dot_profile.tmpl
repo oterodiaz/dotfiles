@@ -1,0 +1,17 @@
+export EDITOR="nvim"
+export PATH="$HOME/.local/bin:$PATH"
+
+{{- if eq .chezmoi.os "darwin" }}
+export HOMEBREW_NO_AUTO_UPDATE=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- end }}
+
+# custom manpage colors
+export LESS_TERMCAP_mb=$(printf '%b' '\033[01;35m')
+export LESS_TERMCAP_md=$(printf '%b' '\033[01;35m')
+export LESS_TERMCAP_me=$(printf '%b' '\033[0m')
+export LESS_TERMCAP_se=$(printf '%b' '\033[0m')
+export LESS_TERMCAP_so=$(printf '%b' '\033[01;44;33m')
+export LESS_TERMCAP_ue=$(printf '%b' '\033[0m')
+export LESS_TERMCAP_us=$(printf '%b' '\033[01;34m')
+export GROFF_NO_SGR='yes'
