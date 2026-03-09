@@ -3,7 +3,9 @@ if status is-interactive
   fish_config theme choose kanagawa
 
   # Prompt
-  source (/opt/homebrew/bin/starship init fish --print-full-init | psub)
+  if command -v starship &> /dev/null
+    source (starship init fish --print-full-init | psub)
+  end
 
   # Aliases
   alias diff='diff --color=auto'
