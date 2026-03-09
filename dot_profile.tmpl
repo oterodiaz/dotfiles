@@ -4,6 +4,14 @@ export PATH="$HOME/.local/bin:$PATH"
 {{- if eq .chezmoi.os "darwin" }}
 export HOMEBREW_NO_AUTO_UPDATE=1
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+{{- if .work }}
+
+ssh-add > /dev/null 2>&1
+if [ -f "$HOME/.developer-setup/cicd-envs" ]; then
+  . "$HOME/.developer-setup/cicd-envs"
+fi
+{{- end }}
 {{- end }}
 
 # custom manpage colors
