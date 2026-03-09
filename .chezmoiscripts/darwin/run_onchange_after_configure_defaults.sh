@@ -2,6 +2,19 @@
 
 set -eufo pipefail
 
+# Accessibility (zoom)
+# These require the terminal application to have full disk access,
+# so we test the first one and output some guidance in case of errors
+if ! defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true; then
+  echo "The terminal application needs full disk access to run this script"
+  echo "Enable it in System Settings -> Privacy & Security -> Full Disk Access"
+  echo "Then, rerun this script with 'chezmoi apply' or 'chezmoi update'"
+  exit 1
+fi
+defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 262144 # Ctrl
+defaults write com.apple.universalaccess closeViewZoomMode -int 0 # Full screen
+defaults write com.apple.universalaccess closeViewPanningMode -int 2 # Keep pointer centered
+
 chflags nohidden ~/Library
 
 mkdir -p ~/Pictures/Screenshots
@@ -26,12 +39,6 @@ defaults write com.apple.dock largesize -int 72
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock magnification -bool true
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-# Accessibility (zoom)
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 262144 # Ctrl
-defaults write com.apple.universalaccess closeViewZoomMode -int 0 # Full screen
-defaults write com.apple.universalaccess closeViewPanningMode -int 2 # Keep pointer centered
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.AppleMultitouchTrackpad DragLock -bool true
