@@ -1,0 +1,66 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $brews := list
+     "basedpyright"
+     "bat"
+     "btop"
+     "curl"
+     "eza"
+     "fd"
+     "fzf"
+     "gdu"
+     "git"
+     "jq"
+     "lazygit"
+     "lua-language-server"
+     "neovim"
+     "ripgrep"
+     "shellcheck"
+     "starship"
+     "tree-sitter-cli"
+     "tmux"
+     "wget"
+     "xz" -}}
+{{ $casks := list
+     "betterdisplay"
+     "brave-browser"
+     "ghostty"
+     "logi-options+"
+     "middleclick"
+     "mos"
+     "nightfall"
+     "obsidian"
+     "stats"
+     "utm"
+     "xcodes-app" -}}
+
+{{ if .work -}}
+{{   $brews = concat $brews (list
+       "gh"
+       "git-lfs") -}}
+{{   $casks = concat $casks (list
+       "copilot-cli"
+       "rancher") -}}
+{{ else }}
+{{   $brews = concat $brews (list
+       "gemini-cli") -}}
+{{   $casks = concat $casks (list
+       "1password"
+       "1password-cli"
+       "aldente"
+       "balenaetcher"
+       "coconutbattery"
+       "iina"
+       "transmission") -}}
+{{ end -}}
+
+brew bundle --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
