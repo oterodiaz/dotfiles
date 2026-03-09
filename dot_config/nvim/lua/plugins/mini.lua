@@ -46,7 +46,7 @@ return {
       end)
 
       -- mini.files
-      vim.keymap.set("n", "<leader>of", function() MiniFiles.open() end)
+      vim.keymap.set("n", "<leader>.", function() MiniFiles.open() end)
 
       -- mini.pick
       vim.keymap.set("n", "<leader>pf", ":Pick files<CR>")
