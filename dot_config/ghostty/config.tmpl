@@ -3,7 +3,6 @@ keybind = global:super+grave_accent=toggle_quick_terminal
 quick-terminal-position = bottom
 mouse-hide-while-typing = true
 
-font-size = 16
 font-feature = calt,liga,dlig
 
 clipboard-paste-protection = true
@@ -25,7 +24,12 @@ split-inherit-working-directory = true
 
 {{- if eq .chezmoi.os "darwin" }}
 
+font-size = 16
 font-thicken = true
 macos-option-as-alt = left
 macos-titlebar-style = hidden
+{{ else }}
+
+font-size = 14
+gtk-titlebar = false
 {{- end}}
